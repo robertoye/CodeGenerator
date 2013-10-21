@@ -1,0 +1,28 @@
+/*
+ * Created by @Model.GlobalVariable.Creater at @DateTime.Now.ToString(); 
+ *
+ *
+ *
+ *
+ *
+ * Copyright:@Model.GlobalVariable.Copyright
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace @Model.Table.OperationCodeNameSpace
+{
+    public class @(Model.Table.Name + "Adapter")    
+    {   
+    	@{
+    		string strJoin = "";
+    		foreach (var i in Model.Table.Fields){
+        		strJoin += i.Name + ",";
+        	}
+        	@(string.Format("private _strSelectSql = @@\"select {0} from {1}\";",strJoin,Model.Table.Name))        	
+        }    	
+    }
+}    
