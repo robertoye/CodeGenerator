@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+///using System.Text;
 
 using NUnit.Framework;
 
@@ -28,7 +28,9 @@ namespace MetaDataFactory.Test
 
        public void abc()
        {
-           string a = ""; 
+           string strJoin = "";
+           strJoin.Substring(0, strJoin.Length - 1);
+           string a = "\"";
            //a.Substring
        }
     }

@@ -45,6 +45,7 @@
     <Compile Include="ConfCollection.cs" />
     <Compile Include="ConfFactory.cs" />
     <Compile Include="ConfSection.cs" />
+    <Compile Include="OutputAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

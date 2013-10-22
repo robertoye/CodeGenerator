@@ -23,11 +23,10 @@ namespace CodeGenerator
             //vb.GetDynamicMemberNames()
             
             TemplateServiceConfiguration config = new TemplateServiceConfiguration();
-            //config.BaseTemplateType = typeof(ITextFormatter);
+            config.BaseTemplateType = typeof(HtmlTemplateBase<>);
             TemplateService svc = new TemplateService(config);
             Razor.SetTemplateService(svc);
-
-            //Razor.SetTemplateBase(typeof(HtmlTemplateBase<>);
+            
             result = Razor.Parse(template, new { GlobalVariable = par, Table = tab },cacheName);
             return result;
         }

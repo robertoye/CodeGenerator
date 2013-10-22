@@ -137,7 +137,6 @@ namespace CodeGenerator.Configuration
         }
         #endregion --配置文件中记录的初始参数
 
-
         public string CodeTemplate { get ; set ; }
         public string OperatorTemplate { get; set; }
     }
