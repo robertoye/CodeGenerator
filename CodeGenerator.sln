@@ -15,6 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGeneratorConfiguration"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGeneratorConsole", "CodeGeneratorConsole\CodeGeneratorConsole.csproj", "{D1C73251-043E-4139-B5CC-7BDFBB0328BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OraMetaData", "OraMetaData\OraMetaData.csproj", "{033EEC18-E363-4E23-98E1-826DA1A17179}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle", "Oracle", "{719A8A8D-9BAE-446D-A9EE-400810F357C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{A0B970E8-1C85-4DB0-8906-0F3E36F0F6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OraMetaData.Test", "OraMetaData.Test\OraMetaData.Test.csproj", "{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,8 +103,33 @@ Global
 		{D1C73251-043E-4139-B5CC-7BDFBB0328BE}.Release|Mixed Platforms.Build.0 = Release|x86
 		{D1C73251-043E-4139-B5CC-7BDFBB0328BE}.Release|x86.ActiveCfg = Release|x86
 		{D1C73251-043E-4139-B5CC-7BDFBB0328BE}.Release|x86.Build.0 = Release|x86
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{033EEC18-E363-4E23-98E1-826DA1A17179}.Release|x86.ActiveCfg = Release|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{033EEC18-E363-4E23-98E1-826DA1A17179} = {719A8A8D-9BAE-446D-A9EE-400810F357C3}
+		{B535CDB4-6DED-4FF5-96AA-6695AA1B071C} = {719A8A8D-9BAE-446D-A9EE-400810F357C3}
+		{DF54921B-1F0F-44CE-9C12-131121045F6A} = {A0B970E8-1C85-4DB0-8906-0F3E36F0F6F8}
 	EndGlobalSection
 EndGlobal

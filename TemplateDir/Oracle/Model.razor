@@ -1,0 +1,58 @@
+@helper cFieldDefine(string rawtype,string name)
+    {
+    	string type = "SID";
+
+    	switch(rawtype){
+    		case "int":
+    			type = "int";
+    			break;
+    		case "smallint":
+    			type = "int";
+    			break;
+    		case "tinyint":
+    			type = "int";
+    			break;		
+    		case "bit":
+    			type = "bool";
+    			break;    		
+    		case "money":
+    			type =  "decimal";
+    			break;
+    		case "smallmoney":
+    			type =  "decimal";
+    			break;
+    		case "decimal":
+    			type =  "decimal";
+    			break;
+    		default :	
+    			type =  "string";
+    			break;
+    	}
+    	string s=string.Format("        public {0} {1} {2}",type,name,"{ get ; set ; }\r\n");
+        @(s)
+    }
+    
+/*
+ * Created by @Model.GlobalVariable.Creater at @DateTime.Now.ToString(); 
+ *
+ *
+ *
+ *
+ *
+ * Copyright:@Model.GlobalVariable.Copyright
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace @Model.Table.CodeNameSpace
+{
+    public class @Model.Table.Name
+    {
+        @foreach (var i in Model.Table.Fields){
+        	@cFieldDefine(i.RawType,i.Name)
+        }
+    }
+}    
