@@ -25,9 +25,8 @@ namespace OraMetaData
 				OracleDataAdapter adapter = new OracleDataAdapter(ocmd);
 				adapter.Fill(ds);
 				return ds.Tables[0];
-			}    
+			}
 		}
-
 		/// <summary>
 		/// 
 		/// </summary>
@@ -42,7 +41,7 @@ namespace OraMetaData
 				ocn.Open();
 				OracleCommand ocmd = new OracleCommand(pName, ocn);
 				ocmd.CommandType = CommandType.StoredProcedure;
-                OracleParameter pra = new OracleParameter();
+				OracleParameter pra = new OracleParameter();
 
 				ocmd.Parameters.Add(par);
 
