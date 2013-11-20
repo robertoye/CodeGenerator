@@ -14,15 +14,22 @@ namespace CodeGeneratorConsole
     {
         static void Main(string[] args)
         {
+
+            string a= "\"";
+            //获取命令行参数
+            CodeGenerator.MetadataModel.ArgsHelper pars = new CodeGenerator.MetadataModel.ArgsHelper(args);            
+            GlobalVariable par = new GlobalVariable();
+            par.Creater = pars.Creator;
+            par.Copyright = pars.CopyrightTeamName;
+            string strFilter = SqlMetaData.SqlStandard.BuildFilter(pars);
+            
             string ConfName = ConfigurationManager.AppSettings["ConfName"].ToString();
             Conf conf = ConfFactory.CurrentConf(ConfName);
-            GlobalVariable par = new GlobalVariable();
-            par.Creater = "zhye";
-            par.Copyright = "Team";
+            
 
             MetaDataFactory factory = new MetaDataFactory(conf, par);
             //获取元数据定义
-            List<TableDef> tabs = factory.GetMetaData();
+            List<TableDef> tabs = factory.GetMetaData(strFilter);
 
             //判定
             foreach (TableDef tb in tabs)

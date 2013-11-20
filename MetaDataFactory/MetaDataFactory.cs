@@ -73,12 +73,12 @@ namespace CodeGenerator
 
             //变化点：
             //读取模板信息到配置中
-            string strCodeTemplateFileName = string.Format("{0}{1}", _CurrentConf.TemplateDir, _strTemplateCodeFileName);
+            string strCodeTemplateFileName = System.IO.Path.Combine(_CurrentConf.TemplateDir, _strTemplateCodeFileName);
             _CurrentConf.CodeTemplate = FileHelper.ReadTemplate(strCodeTemplateFileName);
 
             if (_CurrentConf.OutputOperationSplite)
             {
-                strCodeTemplateFileName = string.Format("{0}{1}", _CurrentConf.TemplateDir, _strTemplateOperatorFileName);
+                strCodeTemplateFileName = System.IO.Path.Combine(_CurrentConf.TemplateDir, _strTemplateOperatorFileName);
                 _CurrentConf.OperatorTemplate = FileHelper.ReadTemplate(strCodeTemplateFileName);
             }           
 
@@ -93,7 +93,7 @@ namespace CodeGenerator
         /// 获取元数据定义
         /// </summary>
         /// <returns></returns>
-        public List<TableDef> GetMetaData()
+        public List<TableDef> GetMetaData(string strFilter)
         {
             List<TableDef> list = new List<TableDef>();
                       
@@ -101,11 +101,11 @@ namespace CodeGenerator
             {
                 case "Sql":
                     SqlStandard st = new SqlStandard(_CurrentConf.SoureConnString);
-                    list = st.ObtainTables("a.Name like 'Contact%'");
+                    list = st.ObtainTables(strFilter);
                     break;
                 default:
                     SqlStandard sql = new SqlStandard(_CurrentConf.SoureConnString);
-                    list = sql.ObtainTables("");
+                    list = sql.ObtainTables(strFilter);
                     break;            
             }
             return list;

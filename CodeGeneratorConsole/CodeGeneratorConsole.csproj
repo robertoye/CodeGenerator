@@ -60,6 +60,10 @@
       <Project>{2B6FE816-DD10-457C-B63D-017963CDBC69}</Project>
       <Name>MetaDataModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SqlMetaData\SqlMetaData.csproj">
+      <Project>{DF54921B-1F0F-44CE-9C12-131121045F6A}</Project>
+      <Name>SqlMetaData</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

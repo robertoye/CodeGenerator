@@ -41,7 +41,7 @@ namespace OraMetaData
 				ocn.Open();
 				OracleCommand ocmd = new OracleCommand(pName, ocn);
 				ocmd.CommandType = CommandType.StoredProcedure;
-				OracleParameter pra = new OracleParameter();
+				OracleParameter par = new OracleParameter();
 
 				ocmd.Parameters.Add(par);
 

@@ -45,12 +45,46 @@ namespace SqlMetaData
 
                 fd.Column_Id = int.Parse( dr["column_id"].ToString());
                 fd.Table = td;
-                fd.Name = (string) dr["Name"];
-                fd.RawType = (string)dr["RawType"];
+                fd.Name =  dr["Name"] as string ?? "";
+                fd.Description = dr["Description"] as string ?? "";
+                fd.RawType = dr["RawType"] as string ?? "";
                 list.Add(fd);
             }      
   
             return list;
+        }
+
+        public static string BuildFilter(ArgsHelper args)
+        {
+            StringBuilder st = new StringBuilder("");
+            if (!string.IsNullOrEmpty(args.TableName) && args.TableName != "*")
+            {
+                st.Append(string.Format("a.Name like '{0}%'", args.TableName));
+            }
+            if (!string.IsNullOrEmpty(args.TableModifyBefore))
+            {
+                if (st.Length == 0)
+                {
+                    st.Append(string.Format("a.modify_date <= '{0}'", args.TableModifyBefore));
+                }
+                else
+                {
+                    st.Append(string.Format(" and a.modify_date <= '{0}'", args.TableModifyBefore));
+                }
+            }
+            if (!string.IsNullOrEmpty(args.TableModifyAfter))
+            {
+                if (st.Length == 0)
+                {
+                    st.Append(string.Format("a.modify_date >= '{0}'", args.TableModifyAfter));
+                }
+                else
+                {
+                    st.Append(string.Format(" and a.modify_date >= '{0}'", args.TableModifyAfter));
+                }
+            }
+
+            return st.ToString();
         }
     }
 }

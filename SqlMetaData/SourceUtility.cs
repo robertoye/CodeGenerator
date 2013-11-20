@@ -25,7 +25,7 @@ namespace SqlMetaData
 									from sys.tables a join sys.schemas g 
 										on(a.schema_id = g.schema_id)    
 									{0} {1}
-									order by a.object_id";
+									order by a.name";
 				string sql = string.Format(sqlFMT, string.IsNullOrEmpty(strFilter) ? "" : "where",
 								string.IsNullOrEmpty(strFilter) ? "" : strFilter);
 				conn.Open();
@@ -50,11 +50,13 @@ namespace SqlMetaData
 			{
 				conn.Open();
 				string sqlFMT = @"select g.Name [SchemaName],a.Name TableName,type_name(b.system_type_id) RawType,
-									b.column_id,b.Name,max_length 'Length',is_nullable  'Nullable'
+									b.column_id,b.Name,max_length 'Length',is_nullable  'Nullable',i.Value Description
 									from sys.tables a join sys.columns b
 											on(a.object_id = b.object_id)
 										 join sys.schemas g
-											on(a.schema_id = g.schema_id)
+											on(a.schema_id = g.schema_id)										
+										left join sys.extended_properties i  
+											on(b.object_id=i.major_id AND b.column_id = i.minor_id )
 									{0} {1}
 									order by a.object_id,b.column_id";
 				string sql = string.Format(sqlFMT, string.IsNullOrEmpty(strFilter) ? "" : "where", 

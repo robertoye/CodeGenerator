@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgsHelper.cs" />
     <Compile Include="eCreateCodeType.cs" />
     <Compile Include="eSourceType.cs" />
     <Compile Include="FieldDef.cs" />
